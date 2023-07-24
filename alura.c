@@ -15,7 +15,6 @@ int main() {
 
 		int ntentativas;
 		int nsecreto = numerasso % 100;
-		int chute;
 		int tentativas = 1;
 		int ganhou = 0;
 		double pontos = 1000;
@@ -35,51 +34,52 @@ int main() {
 							ntentativas = 5;
 					}
 
-		for(int i = 1; i<=ntentativas; i++) {
-			printf("\n");
+	//for que executa o jogo nas dificuldades 1 2 3
+
+		for(int i=0; i<ntentativas; i++) {
 			printf("tentativa %d de %d\n", tentativas, ntentativas);
 			printf("Qual o seu chute?");
-			scanf("%d", &chute);
+			int chute;
+				fflush(stdin);
+				scanf("%d", &chute);
 			printf("seu chute foi %d\n", chute);
 
 			if (chute < 0) {
 				printf("voce nao pode chutar numeros negativos, seu animal\n");
-				
 				continue;
 			}
 			else if (chute == nsecreto) {
 				printf("\n");
 					break;
 					ganhou = 1;
-
 			}
-			else {
-				int maior = chute > nsecreto;
-				if (maior) {
+			else { //else que checa se o chute é maior/menor que o nsecreto
+				if (chute > nsecreto) {
 					printf("%d e maior que o numero secreto\n", chute);
 				}
-
-				int menor = chute < nsecreto;
-				if (menor) {
+				if (chute < nsecreto) {
 					printf("%d e menor que o numero secreto\n", chute);
 				}
 
-				tentativas = tentativas + 1;
+				tentativas++;
 			}
-					double subpontos = (chute - nsecreto) * (double)2;
-			pontos = abs(pontos) - abs(subpontos);
+			// ainda nao sei exatamente oq é isso
+			/*	
+				double subpontos = (chute - nsecreto) * (double)2;
+				pontos = abs(pontos) - abs(subpontos);
+			*/
 
 	}
-
 	printf("\n");
 	printf("\n");
+	//detecção de vitória/derrota
 		if (ganhou == 1){
 			printf("Parabens!! voce ganhou\n");
 			tentativas--;
 			printf("voce acertou em %d tentativas e fez %.1f pontos\n", tentativas, pontos);
 			printf("Que tal jogar novamente?\n");
 		}
-		else if(ganhou != 1) {
+		else {
 				printf("Fim de jogo!\n");
 				printf("poxa,voce perdeu\n");
 		}
@@ -92,7 +92,7 @@ int main() {
 	} while(dnv == 's');
 }	
 
-void titulo() {
+void titulo() { //imagem/texto que aparecem ao abrir o jogo
 	printf("                      -----------------------------------------\n");
 	printf("                       Seja bem vindo ao meu primeiro joguinho \n");
 	printf("                      -----------------------------------------\n");
