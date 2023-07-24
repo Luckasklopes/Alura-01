@@ -17,21 +17,24 @@ int main() {
 		int nsecreto = numerasso % 100;
 		int tentativas = 1;
 		int ganhou = 0;
-		double pontos = 1000;
 
 			printf("em qual dificuldade voce deseja jogar?\n");
 			printf("1 - facil\n");
 			printf("2 - medio\n");
 			printf("3 - dificil\n");
 				int dificuldade;
+				fflush(stdin);
 				scanf("%d", &dificuldade);
 					switch(dificuldade) {
 						case 1:
 							ntentativas = 15;
+							break;
 						case 2:
 							ntentativas = 10;
+							break;
 						case 3:
 							ntentativas = 5;
+							break;
 					}
 
 	//for que executa o jogo nas dificuldades 1 2 3
@@ -42,10 +45,9 @@ int main() {
 			int chute;
 				fflush(stdin);
 				scanf("%d", &chute);
-			printf("seu chute foi %d\n", chute);
 
 			if (chute < 0) {
-				printf("voce nao pode chutar numeros negativos, seu animal\n");
+				printf("voce nao pode chutar numeros negativos\n");
 				continue;
 			}
 			else if (chute == nsecreto) {
@@ -55,12 +57,11 @@ int main() {
 			}
 			else { //else que checa se o chute é maior/menor que o nsecreto
 				if (chute > nsecreto) {
-					printf("%d e maior que o numero secreto\n", chute);
+					printf("%d eh maior que o numero secreto\n\n", chute);
 				}
 				if (chute < nsecreto) {
-					printf("%d e menor que o numero secreto\n", chute);
+					printf("%d eh menor que o numero secreto\n\n", chute);
 				}
-
 				tentativas++;
 			}
 			// ainda nao sei exatamente oq é isso
@@ -68,7 +69,6 @@ int main() {
 				double subpontos = (chute - nsecreto) * (double)2;
 				pontos = abs(pontos) - abs(subpontos);
 			*/
-
 	}
 	printf("\n");
 	printf("\n");
@@ -76,14 +76,13 @@ int main() {
 		if (ganhou == 1){
 			printf("Parabens!! voce ganhou\n");
 			tentativas--;
-			printf("voce acertou em %d tentativas e fez %.1f pontos\n", tentativas, pontos);
+			printf("voce acertou em %d tentativas\n", tentativas);
 			printf("Que tal jogar novamente?\n");
 		}
 		else {
 				printf("Fim de jogo!\n");
 				printf("poxa,voce perdeu\n");
 		}
-
 	printf("\n");
 	printf("\n");
 	printf("deseja jogar novamente? s\\n\n");
