@@ -1,3 +1,6 @@
+/*projeto feito no curso 'C: Conhecendo a linguagem das linguagens'*/
+/*com adições própias feitas em um periodo após o termino do curso*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
