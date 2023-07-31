@@ -6,7 +6,7 @@
 #include <time.h>
 
 void titulo();
-void vitoria(int ganhou);
+void vitoria(int ganhou, int tentativas);
 int qntvidas(int num);
 int random();
 int attp(int chute, int nsecreto);
@@ -41,28 +41,28 @@ int main() {
 					if(ganhou == 1) {
 					break;
 					}
+					tentativas++;
 				}
 				break;
 			case 1: //modo infinito
-
-
-
-
-
-
-
-
-
+				do {
+					printf("tentativa %d\n", tentativas);
+					printf("Qual o seu chute? -> ");
+						fflush(stdin);
+						scanf("%d", &chute);
+					ganhou = attp(chute, nsecreto);
+					tentativas++;
+				}	while(ganhou!=1);
 				break;
 			default:
-				printf("escolha um modo de jogo valido");
+				printf("escolha um modo de jogo valido\n");
 				continue;
 		}
 
 	printf("\n\n");
-		vitoria(ganhou);
+		vitoria(ganhou, tentativas);
 	printf("\n\n");
-	printf("que tal jogar novamente? s/n\n");
+	printf("que tal jogar novamente? s/n -> ");
 		fflush(stdin);
 		scanf("%c", &dnv);
 	} while(dnv == 's');
@@ -110,10 +110,9 @@ int attp(int chute, int nsecreto) {                  //função para checar o ac
 	return(ganhou);
 }
 
-void vitoria(int ganhou) {                           //função para detectar vitória/derrota
+void vitoria(int ganhou, int tentativas) {           //função para detectar vitória/derrota
 	if (ganhou == 1){ //detecção de vitória/derrota
-		printf("Parabens!! voce ganhou\n");	
-		//printf("voce acertou em %d tentativas\n");
+		printf("Parabens!! voce ganhou com %d tentativas\n", tentativas);	
 	}
 	else {
 		printf("Fim de jogo!\n");
