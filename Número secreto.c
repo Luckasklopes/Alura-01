@@ -10,9 +10,6 @@ void vitoria(int ganhou, int tentativas);
 int qntvidas(int num);
 int random();
 int attp(int chute, int nsecreto);
-void teste(double teste) {
-	return 0;
-}
 
 int main() {
 	titulo();
