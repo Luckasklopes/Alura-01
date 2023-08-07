@@ -12,10 +12,10 @@ int main() {
 
     do {
 
-        for(int i=0; i<strlen(psecreta); i++) {
+        for(int i=0; i<strlen(psecreta); i++) { // for que contem o sistema de acertou ou erro do jogo
             
             int achou = 0;
-            for(int j=0; j<tentativas; j++) {
+            for(int j=0; j<tentativas; j++) { //for que checa se o chute foi correto ou nao
                 if(chutes[j] == psecreta[i]) {
                     achou = 1;
                     break;

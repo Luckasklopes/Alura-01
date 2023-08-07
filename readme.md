@@ -35,8 +35,9 @@ No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse 
 
 ### Aprendizados ultilizados:
 #### No curso da Alura:
-- 
-- 
+- conceitos de loops dentro de loops
+- ultilização da biblioteca <string.h> para manipulação de palavras
+- ultilização de funções 
 #### Da Faculdade:
 - 
 - 
