@@ -38,11 +38,10 @@ No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse 
 - conceitos de loops dentro de loops
 - ultilização da biblioteca <string.h> para manipulação de palavras
 - ultilização de funções 
+- ultilizaço de ponteiros
 #### Da Faculdade:
-- 
-- 
-
-
+- formas mais eficientes de ultilizar funções
+- tambem ultilização de ponteiros
 ### Projeto
 #### Ao terminar o curso:
 - 

@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+void titulo();
+void attp(char chutes[26], int tentativas);
+
 int main() {
+    titulo();
     char psecreta[15];
     sprintf(psecreta, "CELULAR"); //sprintf define o conteudo de um vetor/array de chars
 
@@ -29,11 +33,26 @@ int main() {
             }
         }
         printf("\n");
+        attp(chutes, tentativas);
+        tentativas++;
+
+    }   while(!acertou && !enforcou); // -> ! indica negação, nesse caso, enquanto(nao acertou e nao enforcou)
+}
+
+void titulo() {                                      //imagem/texto que aparecem ao abrir o jogo
+    printf("                                                       _________________________   \n");
+    printf("                  /\\\\      _____          _____       |   |     |     |    | |  \\ \n");
+    printf("    ,-----,      /  \\\\____/__|__\\_    ___/__|__\\___   |___|_____|_____|____|_|___\\ \n");
+    printf(",--'---:---`--, /  |  _     |     `| |      |      `| |                    | |    \\ \n");
+    printf("==(o)-----(o)==J    `(o)-------(o)=   `(o)------(o)'   `--(o)(o)--------------(o)--'\n");  
+    printf("````````````````````````````````````````````````````````````````````````````````````\n");
+        printf("pressione qualquer tecla para comecar..:");
+        getchar();
+}
+
+void attp(char chutes[26], int tentativas) {
         char chute;
         scanf(" %c", &chute); // " %c", o espaço antes do %c garante que o 'enter' não seja lido como char
 
         chutes[tentativas] = chute; //chute do jogador na posição tentativa = chute do jogador
-        tentativas++;
-
-    }   while(!acertou && !enforcou); // -> ! indica negação, nesse caso, enquanto(nao acertou e nao enforcou)
 }
