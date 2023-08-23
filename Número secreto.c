@@ -141,5 +141,6 @@ void titulo() {                                      //imagem/texto que aparecem
 	printf("			      \\       :'      |    ;      \n");
 	printf("			       \\______:_______|___;       \n");
 	printf("\n\n\n");
-
+        printf("pressione qualquer tecla para comecar..:");
+        getchar();
 }
