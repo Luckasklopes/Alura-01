@@ -2,7 +2,7 @@
 #include <string.h>
 
 void titulo();
-void attp(char chutes[26], int tentativas);
+void attp(char chutes[26], int *ptent);
 
 int main() {
     titulo();
@@ -33,13 +33,15 @@ int main() {
             }
         }
         printf("\n");
-        attp(chutes, tentativas);
-        tentativas++;
-
+        attp(chutes, &tentativas);
     }   while(!acertou && !enforcou); // -> ! indica negação, nesse caso, enquanto(nao acertou e nao enforcou)
 }
 
 void titulo() {                                      //imagem/texto que aparecem ao abrir o jogo
+	printf("                      -----------------------------------------\n");
+	printf("                       Seja bem vindo ao meu segundo joguinho \n");
+	printf("                      -----------------------------------------\n");
+	printf("\n\n\n\n");
     printf("                                                       _________________________   \n");
     printf("                  /\\\\      _____          _____       |   |     |     |    | |  \\ \n");
     printf("    ,-----,      /  \\\\____/__|__\\_    ___/__|__\\___   |___|_____|_____|____|_|___\\ \n");
@@ -50,9 +52,10 @@ void titulo() {                                      //imagem/texto que aparecem
         getchar();
 }
 
-void attp(char chutes[26], int tentativas) {
+void attp(char chutes[26], int *ptent) {
         char chute;
         scanf(" %c", &chute); // " %c", o espaço antes do %c garante que o 'enter' não seja lido como char
 
-        chutes[tentativas] = chute; //chute do jogador na posição tentativa = chute do jogador
+        chutes[(*ptent)] = chute; //chute do jogador na posição tentativa = chute do jogador
+        (*ptent)++;
 }
