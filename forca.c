@@ -3,6 +3,7 @@
 
 void titulo();
 void attp(char chutes[26], int *ptent);
+int check(char letra, char chutes[26], int tentativas);
 
 int main() {
     titulo();
@@ -16,15 +17,8 @@ int main() {
 
     do {
 
-        for(int i=0; i<strlen(psecreta); i++) { // for que contem o sistema de acertou ou erro do jogo
-            
-            int achou = 0;
-            for(int j=0; j<tentativas; j++) { //for que checa se o chute foi correto ou nao
-                if(chutes[j] == psecreta[i]) {
-                    achou = 1;
-                    break;
-                }
-            }
+        for(int i=0; i<strlen(psecreta); i++) { // for que contem o sistema de acertou ou erro do jogo     
+            int achou = check(psecreta[i], chutes, tentativas);
             if(achou) { //nao é necessario colocar '== 1' pois se entende que achou é booleana(1 ou 0)
                 printf("%c ", psecreta[i]);
             }
@@ -58,4 +52,15 @@ void attp(char chutes[26], int *ptent) {
 
         chutes[(*ptent)] = chute; //chute do jogador na posição tentativa = chute do jogador
         (*ptent)++;
+}
+
+int check(char letra, char chutes[26], int tentativas) {
+    int achou = 0;
+    for(int j=0; j<tentativas; j++) { //for que checa se o chute foi correto ou nao
+        if(chutes[j] == letra) {
+            achou = 1;
+            break;
+        }
+    }
+    return achou;
 }
