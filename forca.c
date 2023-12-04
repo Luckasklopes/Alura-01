@@ -12,21 +12,27 @@ void attp(char chutes[26]);
 void imprime();
 void escolhe_palavra();
 int check(char letra);
+int enforcou();
+int acertou();
+
+
+/*FUNÇÃO MAIN*/
 
 int main() {
 
     titulo();
     escolhe_palavra();
 
-    int acertou = 0; int enforcou = 0;
-
     do {
 
         imprime();
         attp(chutes);
 
-    }   while(!acertou && !enforcou); // -> ! indica negação, nesse caso, enquanto(nao acertou e nao enforcou)
+    }   while(!acertou() && !enforcou());
 }
+
+
+/*CORPO DAS FUNÇÕES*/
 
 void titulo() {                                      //imagem/texto que aparecem ao abrir o jogo
 	printf("                      -----------------------------------------\n");
@@ -77,4 +83,30 @@ int check(char letra) {
         }
     }
     return achou;
+}
+
+int enforcou() {
+    int erros = 0;
+    for(int i=0; i<tentativas; i++) {
+        int existe = 0;
+        for(int j=0; j<strlen(psecreta); j++) {
+            if(chutes[i] == psecreta[j]) {
+                existe = 1;
+                break;
+            }
+        }
+        if(!existe) {
+            erros++;
+        }
+    }
+    return erros >= 5;
+}
+
+int acertou() {
+    for(int i=0; i<strlen(psecreta); i++) {
+        if(!check(psecreta)) {
+            return 0;
+        }
+    }
+    return 1;
 }
