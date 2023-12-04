@@ -87,11 +87,11 @@ void escolhe_palavra() {
 
     for(int i=0; i<=aleatorio; i++) {
         if (fscanf(f, "%s", psecreta) != 1) {
-            printf("erro ao ler palavra do arquivo\n");
+            printf("Erro ao ler palavra do arquivo\n");
             exit(1);
         }
     }
-    
+
     fclose(f);
 }
 
@@ -125,7 +125,7 @@ int enforcou() {
 
 int acertou() {
     for(int i=0; i<strlen(psecreta); i++) {
-        if(!check(psecreta)) {
+        if(!check(psecreta[i])) {
             return 0;
         }
     }
