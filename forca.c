@@ -1,23 +1,13 @@
 #include <stdio.h>
 #include <string.h>
+#include "forca.h"
 
 /*VARIAVEIS GLOBAIS*/
 char psecreta[15];
 char chutes[26];
 int tentativas = 0;
 
-/*FUNÇÕES*/
-void titulo();
-void attp(char chutes[26]);
-void imprime();
-void escolhe_palavra();
-int check(char letra);
-int enforcou();
-int acertou();
-
-
 /*FUNÇÃO MAIN*/
-
 int main() {
 
     titulo();
@@ -33,7 +23,6 @@ int main() {
 
 
 /*CORPO DAS FUNÇÕES*/
-
 void titulo() {                                      //imagem/texto que aparecem ao abrir o jogo
 	printf("                      -----------------------------------------\n");
 	printf("                       Seja bem vindo ao meu segundo joguinho \n");
