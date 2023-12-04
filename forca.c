@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "forca.h"
 
 /*VARIAVEIS GLOBAIS*/
@@ -60,7 +62,37 @@ void imprime() {
 }
 
 void escolhe_palavra() {
-    sprintf(psecreta, "CELULAR"); //sprintf define o conteudo de um vetor/array de chars
+    //sprintf(psecreta, "CELULAR"); //sprintf define o conteudo de um vetor/array de chars
+    FILE* f;
+
+    f = fopen("palavras.txt", "r");
+    if(f==0) {
+        printf("Desculpe, banco de dados nao disponivel\n\n");
+        exit(1);
+    }
+    //printf("arquivo aberto com suceso\n");
+    
+    int qtdpalavras;
+    fscanf(f, "%d", &qtdpalavras);
+    //printf("numero total de palavras: %d\n", qtdpalavras);
+
+    if (qtdpalavras == 0) {
+        printf("Nenhuma palavra disponível no arquivo\n");
+        exit(1);
+    }
+
+
+    srand(time(0));
+    int aleatorio = rand() % qtdpalavras;
+
+    for(int i=0; i<=aleatorio; i++) {
+        if (fscanf(f, "%s", psecreta) != 1) {
+            printf("erro ao ler palavra do arquivo\n");
+            exit(1);
+        }
+    }
+    
+    fclose(f);
 }
 
 int check(char letra) {
