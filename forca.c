@@ -24,7 +24,6 @@ int main() {
 
     if(acertou()) {
         system("cls");
-        system("cls");
         printf("\n\n\n");
         printf("Parabens!! %s era a palavra secreta\n", psecreta);
         printf("Voce descobriu ela em  %d  letras", tentativas);
@@ -32,7 +31,13 @@ int main() {
     }
     if(enforcou()) {
         system("cls");
-        system("cls");
+            printf("  _______      \n");
+            printf(" |/      |     \n");
+            printf(" |     (x_x)   \n");
+            printf(" |      /|\\   \n");
+            printf(" |      / \\   \n");
+            printf(" |             \n");
+            printf("_|___          \n");
         printf("\n\n\n");
         printf("Que pena!  %s  era a palavra secreta\n", psecreta);
         printf("Voce perdeu com  %d  tentativas", tentativas);
@@ -71,9 +76,10 @@ void attp(char chutes[26]) {
 void imprime() {
     int erros = chutes_errados(); /*( CONDIÇÃO ? VERDADEIRO : FALSO) */
 
+    system("cls");
     printf("  _______            \n");
     printf(" |/      |           \n");
-    printf(" |     %c%c%c%c%c    \n", (erros>=1 ? '(' : ' '), (erros>=1 ? ',' : ' '), (erros>=1 ? '_' : ' '), (erros>=1 ? ',' : ' '), (erros>=1 ? ')' : ' '));
+    printf(" |     %c%c%c%c%c    \n", (erros>=1 ? '(' : ' '), (erros>=1 ? 'o' : ' '), (erros>=1 ? '_' : ' '), (erros>=1 ? 'o' : ' '), (erros>=1 ? ')' : ' '));
     printf(" |      %c%c%c       \n", (erros>=3 ? '/' : ' '), (erros>=2 ? '|' : ' '), (erros>=3 ? '\\' : ' '));
     printf(" |      %c %c        \n", (erros>=4 ? '/' : ' '), (erros>=4 ? '\\' : ' '));
     printf(" |                   \n");
