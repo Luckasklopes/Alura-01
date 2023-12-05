@@ -8,5 +8,6 @@ void imprime();
 void escolhe_palavra();
 void adiciona_palavra();
 int check(char letra);
+int chutes_errados();
 int enforcou();
 int acertou();
