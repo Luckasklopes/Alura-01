@@ -12,7 +12,7 @@ No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse 
 - laços de repetição
 - noção de funções
 - noções mais eficientes de lógica de programação
-- idealização de como melhorar e upar o projeto
+- idealização de como melhorar o projeto
 
 
 ### Projeto
@@ -31,13 +31,16 @@ No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse 
 ## Projeto Nº2 - Forca
 
 ### Aprendizados ultilizados:
--
--
--
+- Todos os anteriores
+- Ultilização de cabeçalhos em arquivos separados
+- Funções para leitura e manipulação de arquivos dentro do codigo principal
+- Novas funções e formas diferentes de realizar as mesmas tarefas em um codigo
+- Fatoração do código ao maximo, tornando a main minimalista e simples
 ### Projeto
 #### Ao terminar o curso:
-- 
-- 
+- Possuia uma simples lista de poucas palavras
+- Não possuia uma interface de jogo tao entendivel
+- Faltam elementos essenciais de qualidade de vida
 
 #### Após modificações minhas:
 - 
