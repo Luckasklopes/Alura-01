@@ -65,8 +65,8 @@ void escolhe_palavra() {
     //sprintf(psecreta, "CELULAR"); //sprintf define o conteudo de um vetor/array de chars
     FILE* f;
 
-    f = fopen("palavras.txt", "r");
-    if(f==0) {
+    f = fopen("../frutas.txt", "r");
+    if(f==NULL) {
         printf("Desculpe, banco de dados nao disponivel\n\n");
         exit(1);
     }
@@ -93,6 +93,39 @@ void escolhe_palavra() {
     }
 
     fclose(f);
+}
+
+void adicionapalavra() {
+    char quer;
+
+    printf("Você deseja adicionar uma nova palavra no jogo (S/N)?");
+    scanf(" %c", &quer);
+
+    if(quer == 'S' || 's') {
+        char novapalavra[20];
+
+        printf("Digite a nova palavra, em letras maiúsculas: ");
+        scanf("%s", novapalavra);
+
+        FILE* f;
+
+        f = fopen("palavras.txt", "r+");
+        if(f == NULL) {
+            printf("Banco de dados de palavras não disponível\n\n");
+            exit(1);
+        }
+
+        int qtd;
+        fscanf(f, "%d", &qtd);
+        qtd++;
+        fseek(f, 0, SEEK_SET); //função que "procura" a primeira linha do arquivo
+        fprintf(f, "%d", qtd);
+
+        fseek(f, 0, SEEK_END); //função que procura a ultima linha do arquivo
+        fprintf(f, "\n%s", novapalavra);
+
+        fclose(f);
+    }
 }
 
 int check(char letra) {
