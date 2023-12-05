@@ -7,12 +7,9 @@ Aqui colocarei os códigos feitos durante, e após o perido em que faço os curs
 No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse conceito simples achei pertinente fazer algumas melhorias após o termino do curso.
 
 ### Aprendizados ultilizados:
-#### No curso da Alura:
 - o basico dos comandos de leitura e impressão na linguagem C
 - sistemas de condicionais
 - laços de repetição
-
-#### Da faculdade:
 - noção de funções
 - noções mais eficientes de lógica de programação
 - idealização de como melhorar e upar o projeto
@@ -34,14 +31,9 @@ No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse 
 ## Projeto Nº2 - Forca
 
 ### Aprendizados ultilizados:
-#### No curso da Alura:
-- conceitos de loops dentro de loops
-- ultilização da biblioteca <string.h> para manipulação de palavras
-- ultilização de funções 
-- ultilizaço de ponteiros
-#### Da Faculdade:
-- formas mais eficientes de ultilizar funções
-- tambem ultilização de ponteiros
+-
+-
+-
 ### Projeto
 #### Ao terminar o curso:
 - 

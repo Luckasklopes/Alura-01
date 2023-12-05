@@ -5,7 +5,7 @@
 #include "forca.h"
 
 /*VARIAVEIS GLOBAIS*/
-char psecreta[15];
+char psecreta[PTAMANHO];
 char chutes[26];
 int tentativas = 0;
 
@@ -21,6 +21,25 @@ int main() {
         attp(chutes);
 
     }   while(!acertou() && !enforcou());
+
+    if(acertou()) {
+        system("cls");
+        system("cls");
+        printf("\n\n\n");
+        printf("Parabens!! %s era a palavra secreta\n", psecreta);
+        printf("Voce descobriu ela em  %d  letras", tentativas);
+        printf("\n\n\n");
+    }
+    if(enforcou()) {
+        system("cls");
+        system("cls");
+        printf("\n\n\n");
+        printf("Que pena!  %s  era a palavra secreta\n", psecreta);
+        printf("Voce perdeu com  %d  tentativas", tentativas);
+        printf("\n\n\n");
+    }
+fflush(stdin);
+getchar();
 }
 
 
@@ -65,7 +84,7 @@ void escolhe_palavra() {
     //sprintf(psecreta, "CELULAR"); //sprintf define o conteudo de um vetor/array de chars
     FILE* f;
 
-    f = fopen("../frutas.txt", "r");
+    f = fopen("../palavras.txt", "r");
     if(f==NULL) {
         printf("Desculpe, banco de dados nao disponivel\n\n");
         exit(1);
@@ -95,23 +114,23 @@ void escolhe_palavra() {
     fclose(f);
 }
 
-void adicionapalavra() {
+void adiciona_palavra() {
     char quer;
 
-    printf("Você deseja adicionar uma nova palavra no jogo (S/N)?");
+    printf("Voce deseja adicionar uma nova palavra no jogo (S/N)?");
     scanf(" %c", &quer);
 
     if(quer == 'S' || 's') {
-        char novapalavra[20];
+        char novapalavra[PTAMANHO];
 
-        printf("Digite a nova palavra, em letras maiúsculas: ");
+        printf("Digite a nova palavra, em letras maiusculas: ");
         scanf("%s", novapalavra);
 
         FILE* f;
 
-        f = fopen("palavras.txt", "r+");
+        f = fopen("../palavras.txt", "r+");
         if(f == NULL) {
-            printf("Banco de dados de palavras não disponível\n\n");
+            printf("Banco de dados de palavras nao disponivel\n\n");
             exit(1);
         }
 
