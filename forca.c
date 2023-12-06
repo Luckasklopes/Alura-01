@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <locale.h>
 #include "forca.h"
 
 /*VARIAVEIS GLOBAIS*/
@@ -11,6 +12,7 @@ int tentativas = 0;
 
 /*FUNÃ‡ÃƒO MAIN*/
 int main() {
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     titulo();
     escolhe_palavra();
@@ -24,6 +26,13 @@ int main() {
 
     if(acertou()) {
         system("cls");
+            printf("  _______      \n");
+            printf(" |/      |     \n");
+            printf(" |             \n");
+            printf(" |             \n");
+            printf(" |    \\(^.^)/ \n");
+            printf(" |       |     \n");
+            printf("_|___   / \\   \n");
         printf("\n\n\n");
         printf("Parabens!! %s era a palavra secreta\n", psecreta);
         printf("Voce descobriu ela em  %d  letras", tentativas);
@@ -50,16 +59,27 @@ getchar();
 
 /*CORPO DAS FUNÃ‡Ã•ES*/
 void titulo() {                                      //imagem/texto que aparecem ao abrir o jogo
-	printf("                      -----------------------------------------\n");
-	printf("                       Seja bem vindo ao meu segundo joguinho \n");
-	printf("                      -----------------------------------------\n");
-	printf("\n\n\n\n");
-    printf("                                                       _________________________   \n");
-    printf("                  /\\\\      _____          _____       |   |     |     |    | |  \\ \n");
-    printf("    ,-----,      /  \\\\____/__|__\\_    ___/__|__\\___   |___|_____|_____|____|_|___\\ \n");
-    printf(",--'---:---`--, /  |  _     |     `| |      |      `| |                    | |    \\ \n");
-    printf("==(o)-----(o)==J    `(o)-------(o)=   `(o)------(o)'   `--(o)(o)--------------(o)--'\n");  
-    printf("````````````````````````````````````````````````````````````````````````````````````\n");
+	printf("                                                 ------------------------------------------\n");
+	printf("                                                   Seja bem vindo ao meu segundo joguinho  \n");
+	printf("                                                 ------------------------------------------\n");
+	printf("\n\n");
+    printf("  _____________________        _____________________        _____________________        _____________________        _____________________ \n");
+    printf(" /                    /|      /                    /|      /                    /|      /                    /|      /                    /|\n");
+    printf("/____________________/ |     /____________________/ |     /____________________/ |     /____________________/ |     /____________________/ |\n");
+    printf("|                   |  |     |                   |  |     |                   |  |     |                   |  |     |                   |  |\n");
+    printf("|                   | /      |      _______      |  |     |      _______      |  |     |                   | /      |      _______      |  |\n");
+    printf("|        ___________|/_      |     |  |    |     |  |     |     |  |____|     |  |     |        ___________|/       |     |  |____|     |  |\n");
+    printf("|       |             /|     |     |  |    |     |  |     |     | /     |     |  |     |        |  |                |     | /     |     |  |\n");
+    printf("|       |___________ / |     |     |  |    |     |  |     |     |/______|     |  |     |        |  |                |     |/______|     |  |\n");
+    printf("|                   |  |     |     |  |    |     |  |     |                   | /      |        |  |                |                   |  |\n");
+    printf("|                   | /      |     |  |    |     |  |     |       _       ____|/       |        |  |                |      _______      |  |\n");
+    printf("|        ___________|/       |     |  |    |     |  |     |      | \\      \\    \\       |        |  |__________      |     |  |    |     |  |\n");
+    printf("|       |  |                 |     |  |____|     |  |     |      |  \\      \\    \\      |        | /          /|     |     |  |    |     |  |\n");
+    printf("|       |  |                 |     | /     |     |  |     |      |  |\\      \\   /|     |        |/_________ / |     |     |  |    |     |  |\n");
+    printf("|       |  |                 |     |/______|     |  |     |      |  | \\      \\ / |     |                   |  |     |     |  |    |     |  |\n");
+    printf("|       | /                  |                   | /      |      | /   |      | /      |                   | /      |     | /     |     | / \n");
+    printf("|_______|/                   |___________________|/       |______|/    |______|/       |___________________|/       |_____|/      |_____|/  \n");
+
         printf("pressione qualquer tecla para comecar..:");
         getchar();
     system("cls");
@@ -104,7 +124,7 @@ void escolhe_palavra() {
 
     f = fopen("../palavras.txt", "r");
     if(f==NULL) {
-        printf("Desculpe, banco de dados nao disponivel\n\n");
+        printf("Desculpe, banco de dados não disponível\n\n");
         exit(1);
     }
     //printf("arquivo aberto com suceso\n");
@@ -114,7 +134,7 @@ void escolhe_palavra() {
     //printf("numero total de palavras: %d\n", qtdpalavras);
 
     if (qtdpalavras == 0) {
-        printf("Nenhuma palavra disponÃ­vel no arquivo\n");
+        printf("Nenhuma palavra disponível no arquivo\n");
         exit(1);
     }
 
