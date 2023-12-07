@@ -3,7 +3,7 @@
 #include "pacman.h"
 #include "mapa.h"
 
-MAPA m;
+MAPA m; POSICAO pers;
 
 int main() {
     le_mapa(&m);

@@ -4,6 +4,12 @@ struct mapa {
     int linhas;
     int colunas;
 };
+typedef struct posicao POSICAO;
+struct posicao {
+    int x;
+    int y;
+}
+
 
 void le_mapa(MAPA* m);
 void aloca_mapa(MAPA* m);
