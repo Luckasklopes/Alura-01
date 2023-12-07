@@ -12,7 +12,6 @@ No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse 
 - laços de repetição
 - noção de funções
 - noções mais eficientes de lógica de programação
-- idealização de como melhorar o projeto
 
 
 ### Projeto
@@ -45,3 +44,25 @@ No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse 
 #### Após modificações minhas:
 - 
 - 
+-
+
+***
+
+## Projeto Nº3 - Pac-man
+
+### Aprendizados ultilizados
+- Conceito de matrizes e ponteiros de ponteiros
+- Ultilização de structs e multiplos arquivos
+- Alocação dinamica de memória
+-
+-
+### Projeto
+#### Ao terminar o curso:
+-
+-
+-
+
+#### Após modificações minhas:
+-
+-
+-

@@ -1,53 +1,57 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "pacman.h"
+#include "mapa.h"
 
-char** mapa;
-int linhas;
-int colunas;
+MAPA m;
 
 int main() {
-    le_mapa();
+    le_mapa(&m);
 
-        imprime_mapa();
+    do {
+        imprime_mapa(&m);
 
-    libera_mapa();
+        char comando;
+        scanf(" %c", &comando);
+        move(comando);
+    } while(!acabou());
+
+    libera_mapa(&m);
 }
 
-void le_mapa() {
-    FILE*f;
-    f = fopen("../mapa.txt", "r");
-    if(f == NULL) {
-        printf("Erro ao ler mapa\n");
-        exit(1);
+
+
+void move(char dir) {
+    int x; int y;
+
+    //achar a posição do personagem no mapa
+    for(int i=0; i<m.linhas; i++) {
+        for(int j=0; j<m.colunas; j++) {
+            if(m.matriz[i][j] == '@') {
+                y = i; x = j;
+                break;
+            }
+        }
     }
 
-    fscanf(f, "%d %d", &linhas, &colunas); //fscanf le os conteudos do arquivo f, no caso, mapa.txt
-
-    aloca_mapa();
-
-    for(int i=0; i<5; i++) {
-        fscanf(f, "%s", mapa[i]);
+    switch(dir) {
+        case 'w':
+            m.matriz[y-1][x] = '@';
+            break;
+        case 'a':
+            m.matriz[y][x-1] = '@';
+            break;
+        case 's':
+            m.matriz[y+1][x] = '@';
+            break;
+        case 'd':
+            m.matriz[y][x+1] = '@';
+            break;
     }
-    fclose(f);
+    m.matriz[y][x] = '.';
 }
 
-void aloca_mapa() { /*DEFINE DINAMICAMENTE O TAMANHO DO MAPA*/
-    mapa = malloc(sizeof(char*) * linhas); //aloca dinamicamente as linhas
-    for(int i=0; i<linhas; i++) {
-        mapa[i] = malloc(sizeof(char) * colunas+1); //aloca dinamicamente um vetor coluna pra cada linha
-    }
-}
+int acabou() {
 
-void libera_mapa() {
-    for(int i=0; i<linhas; i++) {
-        free(mapa[i]);
-    }
-    free(mapa);
-}
-
-void imprime_mapa() {
-    for(int i=0; i<linhas; i++) {
-        printf("%s\n", mapa[i]);//ao imprimir apenas um vetor da matriz, ele me devolve toda a linha, nao somente um caracter especifico
-    }
+return 0;
 }
