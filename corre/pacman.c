@@ -7,7 +7,7 @@ MAPA m; POSICAO pers;
 
 int main() {
     le_mapa(&m);
-
+    encontra_mapa(&m, &pers, '@');
     do {
         imprime_mapa(&m);
 
@@ -19,39 +19,31 @@ int main() {
     libera_mapa(&m);
 }
 
-
-
 void move(char dir) {
-    int x; int y;
+    m.matriz[pers.y][pers.x] = '.';
 
-    //achar a posi√ß√£o do personagem no mapa
-    for(int i=0; i<m.linhas; i++) {
-        for(int j=0; j<m.colunas; j++) {
-            if(m.matriz[i][j] == '@') {
-                y = i; x = j;
-                break;
-            }
-        }
-    }
+    //achar a posiÁ„o do personagem no mapa
 
     switch(dir) {
         case 'w':
-            m.matriz[y-1][x] = '@';
+            m.matriz[pers.y-1][pers.x] = '@';
+            pers.y--;
             break;
         case 'a':
-            m.matriz[y][x-1] = '@';
+            m.matriz[pers.y][pers.x-1] = '@';
+            pers.x--;
             break;
         case 's':
-            m.matriz[y+1][x] = '@';
+            m.matriz[pers.y+1][pers.x] = '@';
+            pers.y++;
             break;
         case 'd':
-            m.matriz[y][x+1] = '@';
+            m.matriz[pers.y][pers.x+1] = '@';
+            pers.x++;
             break;
     }
-    m.matriz[y][x] = '.';
 }
 
 int acabou() {
-
 return 0;
 }

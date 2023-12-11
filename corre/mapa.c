@@ -40,3 +40,14 @@ void imprime_mapa(MAPA* m) {
         printf("%s\n", m->matriz[i]);//ao imprimir apenas um vetor da matriz, ele me devolve toda a linha, nao somente um caracter especifico
     }
 }
+
+void encontra_mapa(MAPA* m, POSICAO* p, char c) {
+    for(int i=0; i<m->linhas; i++) {
+        for(int j=0; j<m->colunas; j++) {
+            if(m->matriz[i][j] == c) {
+               p->y = i; p->x = j;
+               break;
+            }
+        }
+    }
+}
