@@ -17,6 +17,7 @@ int main() {
 	do {
 			int nsecreto = random(); int tentativas = 1; int ganhou; int chute; int dificuldade; //declração de algumas variaveis
 		//sistema de escolha de modo de jogo
+		system("cls");
 		printf("em qual modo deseja jogar?\n");
 		printf("0 - normal\n");
 		printf("1 - infinito\n");
@@ -93,6 +94,7 @@ int random() {                                       //função para gerar o num
 
 int attp(int chute, int nsecreto) {                  //função para checar o acerto do chute
 	int ganhou;
+	system("cls");
 	if (chute < 0) {
 		printf("voce nao pode chutar numeros negativos\n");
 	}

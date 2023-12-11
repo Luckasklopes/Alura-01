@@ -18,7 +18,6 @@ int main() {
     escolhe_palavra();
 
     do {
-
         imprime();
         attp(chutes);
 
@@ -124,7 +123,7 @@ void escolhe_palavra() {
 
     f = fopen("../palavras.txt", "r");
     if(f==NULL) {
-        printf("Desculpe, banco de dados não disponível\n\n");
+        printf("Desculpe, banco de dados nï¿½o disponï¿½vel\n\n");
         exit(1);
     }
     //printf("arquivo aberto com suceso\n");
@@ -134,7 +133,7 @@ void escolhe_palavra() {
     //printf("numero total de palavras: %d\n", qtdpalavras);
 
     if (qtdpalavras == 0) {
-        printf("Nenhuma palavra disponível no arquivo\n");
+        printf("Nenhuma palavra disponï¿½vel no arquivo\n");
         exit(1);
     }
 
