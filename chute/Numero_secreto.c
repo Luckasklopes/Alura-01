@@ -10,6 +10,7 @@ void vitoria(int ganhou, int tentativas);
 int qntvidas(int num);
 int random();
 int attp(int chute, int nsecreto);
+void modo_infinito();
 
 int main() {
 	titulo();
@@ -147,4 +148,8 @@ void titulo() {                                      //imagem/texto que aparecem
         printf("pressione qualquer tecla para comecar..:");
         getchar();
 	system("cls");
+}
+
+void modo_infinito() {
+	
 }

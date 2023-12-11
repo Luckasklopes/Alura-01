@@ -3,14 +3,8 @@
 #include <string.h>
 #include <time.h>
 #include <locale.h>
-#include "forca.h"
+#include "palavra_secreta.h"
 
-/*VARIAVEIS GLOBAIS*/
-char psecreta[PTAMANHO];
-char chutes[26];
-int tentativas = 0;
-
-/*FUNÇÃO MAIN*/
 int main() {
     setlocale(LC_ALL, "Portuguese_Brazil");
 
@@ -20,36 +14,13 @@ int main() {
     do {
         imprime();
         attp(chutes);
-
-    }   while(!acertou() && !enforcou());
+    } while(!acertou() && !enforcou());
 
     if(acertou()) {
-        system("cls");
-            printf("  _______      \n");
-            printf(" |/      |     \n");
-            printf(" |             \n");
-            printf(" |             \n");
-            printf(" |    \\(^.^)/ \n");
-            printf(" |       |     \n");
-            printf("_|___   / \\   \n");
-        printf("\n\n\n");
-        printf("Parabens!! %s era a palavra secreta\n", psecreta);
-        printf("Voce descobriu ela em  %d  letras", tentativas);
-        printf("\n\n\n");
+        vitoria();
     }
     if(enforcou()) {
-        system("cls");
-            printf("  _______      \n");
-            printf(" |/      |     \n");
-            printf(" |     (x_x)   \n");
-            printf(" |      /|\\   \n");
-            printf(" |      / \\   \n");
-            printf(" |             \n");
-            printf("_|___          \n");
-        printf("\n\n\n");
-        printf("Que pena!  %s  era a palavra secreta\n", psecreta);
-        printf("Voce perdeu com  %d  tentativas", tentativas);
-        printf("\n\n\n");
+        derrota();
     }
 fflush(stdin);
 getchar();
@@ -213,7 +184,10 @@ int chutes_errados() {
 }
 
 int enforcou() {
-    return chutes_errados() >= 5;
+    if(chutes_errados() >= 5) {
+        return 1;
+    }
+    return 0;
 }
 
 int acertou() {
@@ -223,4 +197,34 @@ int acertou() {
         }
     }
     return 1;
+}
+
+void vitoria() {
+    system("cls");
+        printf("  _______      \n");
+        printf(" |/      |     \n");
+        printf(" |             \n");
+        printf(" |             \n");
+        printf(" |    \\(^.^)/ \n");
+        printf(" |       |     \n");
+        printf("_|___   / \\   \n");
+    printf("\n\n\n");
+    printf("Parabens!! %s era a palavra secreta\n", psecreta);
+    printf("Voce descobriu ela com  %d  tentativas", tentativas);
+    printf("\n\n\n");
+}
+
+void derrota() {
+    system("cls");
+        printf("  _______      \n");
+        printf(" |/      |     \n");
+        printf(" |     (x_x)   \n");
+        printf(" |      /|\\   \n");
+        printf(" |      / \\   \n");
+        printf(" |             \n");
+        printf("_|___          \n");
+    printf("\n\n\n");
+    printf("Que pena!  %s  era a palavra secreta\n", psecreta);
+    printf("Voce perdeu com  %d  tentativas", tentativas);
+    printf("\n\n\n");
 }

@@ -1,6 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include "forca/palavra_secreta.h"
+
+
+
+
+
+
+
+
+
+
+
+                                                                /* NAO CONSEGUI FAZER ESSA PORRA */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int main() {
     setlocale(LC_ALL, "Portuguese_Brazil");
@@ -13,9 +39,9 @@ int main() {
         getchar();
         system("cls");
         printf("\n");
-    int dnv = 1;
+    int qr = 1;
     do {
-        printf("Qual jogo você deseja jogar?\n");
+        printf("Qual jogo ê deseja jogar?\n");
         printf("1 - chute: seu objetivo é tentar acertar o numero aleatorio com o menor numero de chutes possivel\n");
         printf("2 - forca: seu objetivo é acertar a palavra secreta com o minimo de erros possivel\n");
         printf("3 - corre: WIP\n");
@@ -27,7 +53,7 @@ int main() {
                 printf("aqui sera o jogo de acertar numeros aleatorios\n\n");
                 break;
             case 2:
-                printf("aqui sera o jogo da forca\n\n");
+                forca();
                 break;
             case 3:
                 printf("work in progress\n\n");
@@ -37,5 +63,5 @@ int main() {
             default:
                 continue;
         }
-    } while(dnv == 1);
+    } while(qr == 1);
 }
