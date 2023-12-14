@@ -42,15 +42,16 @@ void imprime_mapa(MAPA* m) {
     }
 }
 
-void encontra_mapa(MAPA* m, POSICAO* p, char c) {
+int encontra_mapa(MAPA* m, POSICAO* p, char c) {
     for(int i=0; i<m->linhas; i++) {
         for(int j=0; j<m->colunas; j++) {
             if(m->matriz[i][j] == c) {
                p->y = i; p->x = j;
-               break;
+               return 1;
             }
         }
     }
+    return 0;
 }
 
 int posicao_valida(MAPA* m, int x, int y) {
@@ -87,4 +88,21 @@ void copia_mapa(MAPA* destino, MAPA* origem) {
 
 int posicao_vazia(MAPA* m, int prox_x, int prox_y) {
     return m->matriz[prox_x][prox_y] == VAZIO;  //se o proximo movimento for para uma casa diferente de '.'    
+}
+
+int posicao_permitida(MAPA* m, char pers, int prox_x, int prox_y) {
+    if(posicao_valida(m, prox_x, prox_y) &&
+       !ehparede(m, prox_x, prox_y) &&
+       !ehpersonagem(m, pers, prox_x, prox_y))
+        return 1;
+    return 0;
+}
+
+int ehparede(MAPA* m, int prox_x, int prox_y) {
+    return (m->matriz[prox_x][prox_y] == PAREDE_VERTICAL ||
+            m->matriz[prox_x][prox_y] == PAREDE_HORIZONTAL);
+}
+
+int ehpersonagem(MAPA* m, char pers, int prox_x, int prox_y) {
+    return (m->matriz[prox_x][prox_y] == pers);
 }

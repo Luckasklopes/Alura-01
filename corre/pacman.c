@@ -17,8 +17,11 @@ int main() {
         move(comando);
         inimigos();
     } while(!acabou());
-
+    system("cls");
+    printf("perdeu otario");
     libera_mapa(&m);
+fflush(stdin);
+getchar();
 }
 
 int tecla_movimento(int dir) {
@@ -54,11 +57,7 @@ void move(char dir) {
             break;
     }
 
-    if(!posicao_valida(&m, prox_x, prox_y)) {
-        return;
-    }
-
-    if(!posicao_vazia(&m, prox_x, prox_y)) {
+    if(!posicao_permitida(&m, INIMIGO, prox_x, prox_y)) {
         return;
     }
 
@@ -68,7 +67,10 @@ void move(char dir) {
 }
 
 int acabou() {
-return 0;
+    POSICAO pos;
+    int tavivo = encontra_mapa(&m, &pos, PERSONAGEM);
+    
+    return !tavivo;
 }
 
 void inimigos() {
@@ -86,10 +88,6 @@ void inimigos() {
                 if(encontrou) {
                     andar(&m, i, j, dest_x, dest_y);
                 }
-
-                //if(posicao_valida(&m, i+1, j) && posicao_vazia(&m, i+1, j)) {
-                //    andar(&m, i, j, i+1, j);
-                //}
             }
         }
     }
@@ -109,7 +107,7 @@ int dest_inimigo(int pos_x, int pos_y, int* dest_x, int* dest_y) {
     for (int i=0; i<5; i++) {
         int posicao = rand() % 4;
 
-        if(posicao_valida(&m, opcoes[posicao][0], opcoes[posicao][1]) && posicao_vazia(&m, opcoes[posicao][0], opcoes[posicao][1])) {
+        if(posicao_permitida(&m, INIMIGO, opcoes[posicao][0], opcoes[posicao][1])) {
             *dest_x = opcoes[posicao][0];
             *dest_y = opcoes[posicao][1];
 
