@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <String.h>
 #include "mapa.h"
 
 void le_mapa(MAPA* m) {
@@ -50,4 +51,40 @@ void encontra_mapa(MAPA* m, POSICAO* p, char c) {
             }
         }
     }
+}
+
+int posicao_valida(MAPA* m, int x, int y) {
+    if(x>=m->linhas) { //se o proximo movimento for maior que o numero de lihas
+        return 0;
+    }
+    if(y>=m->colunas) { //se o proximo movimento for maior que o numero de colunas
+        return 0;
+    }
+    return 1;
+}
+
+void andar(MAPA* m, int ant_x, int ant_y, int prox_X, int prox_y) {
+    char personagem = m->matriz[ant_x][ant_y];
+    m->matriz[prox_X][prox_y] = personagem;
+    m->matriz[ant_x][ant_y] = VAZIO;
+
+        /*m.matriz[prox_x][prox_y] = '@'; //proxima casa vira o personagem
+        m.matriz[pers.x][pers.y] = '.'; //casa anterior vira um ponto
+        pers.x = prox_x;
+        pers.y = prox_y; //atualiza a posição do personagem para a proxima posição*/
+
+}
+
+void copia_mapa(MAPA* destino, MAPA* origem) {
+    destino->linhas = origem->linhas;
+    destino->colunas = origem ->colunas;
+
+    aloca_mapa(destino);
+    for(int i=0; i<origem->linhas; i++) {
+        strcpy(destino->matriz[i], origem->matriz[i]);
+    }
+}
+
+int posicao_vazia(MAPA* m, int prox_x, int prox_y) {
+    return m->matriz[prox_x][prox_y] == VAZIO;  //se o proximo movimento for para uma casa diferente de '.'    
 }
