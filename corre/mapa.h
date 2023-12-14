@@ -1,8 +1,12 @@
-#define PERSONAGEM        '@'
-#define INIMIGO           '#'
-#define VAZIO             '.'
-#define PAREDE_VERTICAL   '|'
+#define PERSONAGEM '@'
+#define INIMIGO '#'
+#define VAZIO '.'
+#define PAREDE_VERTICAL '|'
 #define PAREDE_HORIZONTAL '-'
+#define BOMBA 'Q'
+//#define ESPADA 'l'
+//#define PISTOLA '~'
+
 
 typedef struct mapa MAPA;
 struct mapa {

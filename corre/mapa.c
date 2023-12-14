@@ -36,7 +36,7 @@ void libera_mapa(MAPA* m) {
 }
 
 void imprime_mapa(MAPA* m) {
-    system("cls");
+    //system("cls");
     for(int i=0; i<m->linhas; i++) {
         printf("%s\n", m->matriz[i]);//ao imprimir apenas um vetor da matriz, ele me devolve toda a linha, nao somente um caracter especifico
     }
