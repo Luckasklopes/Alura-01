@@ -54,8 +54,8 @@ No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse 
 - Conceito de matrizes e ponteiros de ponteiros
 - Ultilização de structs e multiplos arquivos
 - Alocação dinamica de memória
--
--
+- Recursividade ao ultilizar fun��es
+- multiplos arquivos sem erros em um meso c�digo
 ### Projeto
 #### Ao terminar o curso:
 -
