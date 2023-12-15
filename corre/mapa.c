@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <String.h>
 #include "mapa.h"
+#include "ui.h"
 
 void le_mapa(MAPA* m) {
     FILE*f;
@@ -35,12 +36,7 @@ void libera_mapa(MAPA* m) {
     free(m->matriz);
 }
 
-void imprime_mapa(MAPA* m) {
-    //system("cls");
-    for(int i=0; i<m->linhas; i++) {
-        printf("%s\n", m->matriz[i]);//ao imprimir apenas um vetor da matriz, ele me devolve toda a linha, nao somente um caracter especifico
-    }
-}
+
 
 int encontra_mapa(MAPA* m, POSICAO* p, char c) {
     for(int i=0; i<m->linhas; i++) {

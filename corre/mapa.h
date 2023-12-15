@@ -1,3 +1,6 @@
+#ifndef _MAPA_H_
+#define _MAPA_H_
+
 #define PERSONAGEM '@'
 #define INIMIGO '#'
 #define VAZIO '.'
@@ -28,6 +31,7 @@ void andar(MAPA* m, int ant_x, int ant_y, int prox_X, int prox_y);
 void le_mapa(MAPA* m);
 void aloca_mapa(MAPA* m);
 void libera_mapa(MAPA* m);
-void imprime_mapa(MAPA* m);
 int encontra_mapa(MAPA* m, POSICAO* p, char c);
 void copia_mapa(MAPA* destino, MAPA* origem);
+
+#endif

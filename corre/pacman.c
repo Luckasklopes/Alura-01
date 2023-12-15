@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <locale.h>
-
 #include <windows.h>
 
 #include "pacman.h"
 #include "mapa.h"
+#include "ui.h"
 
 MAPA m; POSICAO pers; int tem_espada = 0; int tem_municao = 0; int tem_bomba = 1;
 
@@ -22,12 +22,13 @@ int main() { setlocale(LC_ALL, "Portuguese_Brazil");
         imprime_mapa(&m);
 
         char comando;
+        fflush(stdin);
         scanf(" %c", &comando);
         move(comando);
-        /*if(comando == EXPLODIR && tem_bomba > 0) {
+        if(comando == EXPLODIR && tem_bomba > 0) {
             usar_bomba(pers.x, pers.y, 3);
             tem_bomba--;
-        }*/
+        }
 
         inimigos();
     } while(!acabou());
@@ -136,7 +137,7 @@ int dest_inimigo(int pos_x, int pos_y, int* dest_x, int* dest_y) {
     return 0;
 }
 
-/*void usar_bomba() {
+void usar_bomba() {
     usar_bomba2(pers.x, pers.y, 0, 1, 3);
     usar_bomba2(pers.x, pers.y, 0, -1, 3);
     usar_bomba2(pers.x, pers.y, 1, 0, 3);
@@ -158,7 +159,7 @@ void usar_bomba2(int x, int y, int somax, int somay, int qtd) {
 
     m.matriz[novox][novoy] = VAZIO;
     usar_bomba2(novox, novoy, somax, somay, qtd-1);
-}*/
+}
 
 
 
