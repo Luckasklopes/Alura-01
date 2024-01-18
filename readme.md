@@ -1,47 +1,47 @@
 # Projeto de jogo - ALURA
->Projetos feitos nos 3 cursos de linguagem C na plataforma Alura.
+> Projetos feitos nos 3 cursos de linguagem C na plataforma Alura.
 
-Aqui colocarei os códigos feitos durante, e após o perido em que faço os cursos de Linguagem C de niveis básico, medio e avançado na Alura.
+Aqui colocarei os códigos feitos durante e após o período em que faço os cursos de Linguagem C de níveis básico, médio e avançado na Alura.
 
 ## Projeto Nº1 - Número secreto
-No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse conceito simples achei pertinente fazer algumas melhorias após o termino do curso.
+No curso, foi feito um jogo simples de adivinhar números. Porém, mesmo com esse conceito simples, achei pertinente fazer algumas melhorias após o término do curso.
 
-### Aprendizados ultilizados:
-- o basico dos comandos de leitura e impressão na linguagem C
-- sistemas de condicionais
-- laços de repetição
-- noção de funções
-- noções mais eficientes de lógica de programação
-
+### Aprendizados utilizados:
+- O básico dos comandos de leitura e impressão na linguagem C.
+- Sistemas de condicionais.
+- Laços de repetição.
+- Noção de funções.
+- Noções mais eficientes de lógica de programação.
 
 ### Projeto
 #### Ao terminar o curso:
-- Possuia 3 dificuldades somente
-- Código simples, porem ineficiente
-- Mais complexo do que o necessário
+- Possuía 3 dificuldades somente.
+- Código simples, porém ineficiente.
+- Mais complexo do que o necessário.
 
-#### Após modificações minhas:
-- Diferentes modos de jogo
-- Um Código um pouco mais complexo, porém mais eficiente
-- Mais simples para pessoas mais experientes
+#### Após minhas modificações:
+- Diferentes modos de jogo.
+- Um código um pouco mais complexo, porém mais eficiente.
+- Mais simples para pessoas mais experientes.
 
 ***
 
 ## Projeto Nº2 - Forca
 
-### Aprendizados ultilizados:
-- Todos os anteriores
-- Ultilização de cabeçalhos em arquivos separados
-- Funções para leitura e manipulação de arquivos dentro do codigo principal
-- Novas funções e formas diferentes de realizar as mesmas tarefas em um codigo
-- Fatoração do código ao maximo, tornando a main minimalista e simples
+### Aprendizados utilizados:
+- Todos os anteriores.
+- Utilização de cabeçalhos em arquivos separados.
+- Funções para leitura e manipulação de arquivos dentro do código principal.
+- Novas funções e formas diferentes de realizar as mesmas tarefas em um código.
+- Fatoração do código ao máximo, tornando a main minimalista e simples.
+
 ### Projeto
 #### Ao terminar o curso:
-- Possuia uma simples lista de poucas palavras
-- Não possuia uma interface de jogo tao entendivel
-- Faltam elementos essenciais de qualidade de vida
+- Possuía uma simples lista de poucas palavras.
+- Não possuía uma interface de jogo tão compreensível.
+- Faltavam elementos essenciais de qualidade de vida.
 
-#### Após modificações minhas:
+#### Após minhas modificações:
 - 
 - 
 -
@@ -50,19 +50,20 @@ No curso foi feito um jogo simples de adivinhar números, porém mesmo com esse 
 
 ## Projeto Nº3 - Pac-man
 
-### Aprendizados ultilizados
-- Conceito de matrizes e ponteiros de ponteiros
-- Ultilização de structs e multiplos arquivos
-- Alocação dinamica de memória
-- Recursividade ao ultilizar fun��es
-- multiplos arquivos sem erros em um meso c�digo
+### Aprendizados utilizados:
+- Conceito de matrizes e ponteiros de ponteiros.
+- Utilização de structs e múltiplos arquivos.
+- Alocação dinâmica de memória.
+- Recursividade ao utilizar funções.
+- Múltiplos arquivos sem erros em um mesmo código.
+
 ### Projeto
 #### Ao terminar o curso:
 -
 -
 -
 
-#### Após modificações minhas:
+#### Após minhas modificações:
 -
 -
 -
